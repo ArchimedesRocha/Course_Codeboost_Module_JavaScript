@@ -30,10 +30,17 @@ allDropdown.forEach((item) => {
   console.log(item);
 });
 
-//forma com um único argumento
+//Forma com um único argumento
 const allDropdown = document.querySelectorAll(".js-dropdown");
 
 allDropdown.forEach((item) => {
+  console.log(item);
+});
+
+//Forma com vários argumento
+const allDropdown = document.querySelectorAll(".js-dropdown");
+
+allDropdown.forEach((item, index, array) => {
   console.log(item);
 });
 
