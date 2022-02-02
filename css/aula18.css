@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 3rem;
+}
+
+.accordion {
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.accordion .title {
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.accordion .title .icon {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #000;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion .title .icon img {
+  max-width: 12px;
+  transition: transform .3s;
+}
+
+.accordion p {
+  display: none;
+}
+
+.accordion:hover .title {
+  background-color: #e7e7e7;
+}
+
+.accordion.active .title {
+  border-bottom: 2px solid #000;
+}
+
+.accordion.active .title .icon img {
+  transform: rotate(180deg);
+}
+
+.accordion.active p {
+  display: block;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  animation: fadeIn .3s forwards;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
