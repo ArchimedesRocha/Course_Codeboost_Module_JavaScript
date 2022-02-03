@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 62.5%;
+  font-family: "Arial", sans-serif;
+}
+
+.button {
+  width: 25rem;
+  height: 6rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  border: 2px solid #000;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+
+  /*Similar ao display none, usamos isto porque o display none não funciona transition*/
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.modal .box {
+  position: relative;
+  z-index: 2;
+  width: 60rem;
+  height: 60rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Efeito vir de baixo para cima */
+  transform: translateY(2rem);
+  transition: transform 0.3s;
+}
+
+.modal.active .box {
+  transform: translateY(0);
+}
+
+.modal .box .close {
+  position: absolute;
+  top: -5.1rem;
+  right: 0;
+  width: 10rem;
+  height: 4.3rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
